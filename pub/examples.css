@@ -1,0 +1,200 @@
+#animationField {
+    width: 50%;
+    height: 724px;
+    background-image: url("americanFootbalField.jpeg");
+    background-size: 100% 100%;
+    left: 20px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: ridge;
+    border-width: 15px;
+}
+
+#animationField2 {
+    width: 75%;
+    height: 600px;
+    background-image: url("soccerField.png");
+    background-size: 100% 100%;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: ridge;
+    border-width: 15px;
+
+}
+
+.makeThis {
+    font-size: large;    
+}
+
+.title {
+    text-align: center;
+    font-size: xxx-large;
+    font-family: cursive;
+}
+
+.navigator {
+    position:relative;
+    font-size: xx-large;
+    color: black;
+    font-family: cursive;
+    left: 5%;
+    margin-top: 20px;
+    border: 3px solid red;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header {
+    position:relative;
+    font-size: xx-large;
+    color: black;
+    font-family: cursive;
+    left: 5%;
+    margin-top: 20px;
+}
+
+#explanation {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid red;
+}
+
+#features {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid red;
+}
+
+.description {
+    background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 3px solid aqua;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.subtitle {
+    background-color: white;
+    /* width: 90%; */
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+#example1 {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid red;
+}
+
+#example2 {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid red;
+}
+
+.indent {
+    margin-left:20px;
+}
+.codeContainer {
+    background-color:white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 3px filled red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.maroon {
+    color: maroon;
+}
+
+.green {
+    color: green;
+}
+
+.dblue {
+    color: dodgerblue;
+}
+
+.gold {
+    color: goldenrod;
+}
+
+.greenIndent {
+    color: green;
+    margin-left:20px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.buttonHolderContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: center;
+}

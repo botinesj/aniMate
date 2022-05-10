@@ -1,0 +1,196 @@
+.title {
+    text-align: center;
+    font-size: xxx-large;
+    font-family: cursive;
+}
+
+.navigator {
+    position:relative;
+    font-size: xx-large;
+    color: black;
+    font-family: cursive;
+    left: 5%;
+    margin-top: 20px;
+    border: 3px solid red;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.header {
+    position:relative;
+    font-size: xx-large;
+    color: black;
+    font-family: cursive;
+    left: 5%;
+    margin-top: 20px;
+}
+
+#setUpContainer {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border: 3px solid red;
+}
+
+#gsContainer {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border: 3px solid red;
+
+
+}
+
+#methodsContainer {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid red;
+}
+
+#howToContainer {
+    background-color: antiquewhite;
+    width: 90%;
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border: 3px solid red;
+}
+
+#gsContainer .codeContainer {
+    background-color:white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#methodsContainer .codeContainer {
+    background-color:white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.codeContainer {
+    background-color:white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 3px filled red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.description {
+    background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 23px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 3px solid aqua;
+}
+
+.subtitle {
+    background-color: white;
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.maroon {
+    color: maroon;
+}
+
+.green {
+    color: green;
+}
+
+.gold {
+    color: goldenrod;
+}
+
+.dblue {
+    color: dodgerblue;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.indent {
+    margin-left:20px;
+}

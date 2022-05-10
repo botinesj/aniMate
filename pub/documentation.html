@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="documentation.css">
+    
+    <title>JS Libraries</title>
+
+ </head>
+ <body>
+   <div class="title">aniMate.js</div>
+
+   <div class="subtitle">
+    A learning utility library that allows users to easily create animations representing
+    plays or events in sports.    
+  </div>
+
+   <a class="navigator" href="./examples.html">Home</a>
+   <a class="navigator" href="./documentation.html">Documentation</a>
+
+
+   <div class="header">Getting Started</div>
+
+    <div id="gsContainer">
+      <div class="description">
+        The following code must be included in the head of your HTML file:
+      </div>
+      <div class="codeContainer">
+        <code><span class="maroon">&lt;script</span> <span class="red">src</span>=<span class="blue">"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"</span><span class="maroon">>&lt;/script&gt;</span></code>
+        <br>
+        <code><span class="maroon">&lt;script</span> <span class="red">defer src</span>=<span class="blue">"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"</span><span class="maroon">>&lt;/script&gt;</span></code>
+        <br>
+        <code><span class="maroon">&lt;link</span> <span class="red">rel</span>=<span class="blue">"stylesheet" </span><span class="red">href</span>=</span><span class="blue">"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"</span><span class="maroon">></span></code>
+        <br>
+        <code><span class="maroon">&lt;script</span> <span class="red">defer src</span>=<span class="blue">"https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"</span><span class="maroon">>&lt;/script></span> </code>
+        <br>
+        <code><span class="maroon">&lt;script</span> <span class="red">defer type</span>=<span class="blue">"text/javascript"</span> <span class="red">src</span>=<span class="blue">'js/animate.js'</span><span class="maroon">>&lt;/script></span></code>
+      </div>
+    </div>
+
+    <div class="header">How to Use</div>
+
+    <div id="howToContainer">
+      <div class="description">
+        Create the HTML Div element that will be the animation field:
+      </div>
+  
+      <div class="codeContainer">
+        <code><span class="maroon">&lt;div</span> <span class="red">id</span>=<span class="blue">"animationField"</span><span class="maroon">></span></span><span class="maroon">&lt;/div&gt;</span></code>
+        <br>
+      </div>
+
+      <div class="description">
+        The HTML Div element <span class="italic">must</span> be relatively positioned, otherwise the library will not work:
+      </div>
+      <div class="codeContainer">
+        <code><span class="maroon">#animationField </span>{</code>
+          <br>
+          <code class="indent">...</code>
+          <br>
+          <code class="indent"><span class="red">position</span>:<span class="dblue"> relative</span>;</code>
+          <br>
+          <code class="indent">...</code>
+          <br>
+        <code> }</code>
+
+      </div>
+  
+  
+      <div class="description">
+        Then use the library in the JavaScript file. The background colours for the player and ball elements <span class="italic">must</span> be among the following:
+        Black, Red, Orange, Yellow, Green, Blue, Purple or Brown. Please note that the order of the aniMate method calls must be the same as below for the library to work:
+      </div>
+  
+      <div class="codeContainer">
+        <code><span class="blue">const</span> <span class="dblue">aMlibrary</span> = <span class="blue">new</span> <span class="dblue">aM</span>()</code>
+        <code><span class="green">// Create the object necessary to use the library</span></code>
+        <br>
+      <br>
+      <code><span class="green">// Create objects that you want to be animated</span></code>
+      <br>
+      <code><span class="blue">const</span> <span class="dblue">player</span> = <span class="blue">document</span>.<span class="gold">createElement</span>(<span class="red">'div'</span>)</code>
+      <br>
+      <code>	<span class="dblue">player.style</span> = <span class="red">'width: 40px; height: 40px; border-radius: 50%; background-color: Blue;'</span> </code>
+      <br>
+      <br>
+      <code> <span class="blue">const</span> <span class="dblue">ball</span> = <span class="blue">document</span>.<span class="gold">createElement</span>(<span class="red">'div'</span>)</code>
+      <br>
+      <code><span class="dblue">ball.style</span> = <span class="red">'width: 30px; height: 30px; border-radius: 50%; background-color: Brown;'</span></code>
+      <br>
+      <br>
+      <code><span class="green">// Create the horizontal interacter element</span></code>
+      <br>
+      <code> <span class="blue">const</span> <span class="dblue">hInteracter</span> = <span class="dblue">aMlibrary</span>.<span class="gold">horizontalInteracter</span>() </code>
+      <br>
+      <br>
+    
+      <code>	<span class="dblue">aMlibrary</span>.<span class="gold">initiate</span>(<span class="red">'#animationField'</span>) <span class="green">// Set the HTML Div element that we want to be the animation field </span> </code> 
+      <br>
+      <code><span class="dblue">aMlibrary</span>.<span class="gold">setReset</span>(<span class="blue">true</span>) <span class="green">// Set whether we want the animations to reset upon completion</span></code> </code> 
+      <br>
+      <code> $(<span class="red">'#animationField'</span>).<span class="gold">after</span>( <span class="dblue">hInteracter</span>); <span class="green">// Insert the horizontal interacter into the DOM wherever desired </span> </code> 
+      <br>
+      <code> <span class="dblue">aMlibrary</span>.<span class="gold">setSlider</span>(); <span class="green">// Set the slider in the horizontal interacter </span></code>  </code>
+      <br>
+      <code> <span class="dblue">aMlibrary</span>.<span class="gold">setPlayer</span>(<span class="dblue">player</span>) <span class="green">// Set the HTML element that will represent a player</span></code> 
+      <br>
+      <code> <span class="dblue">aMlibrary</span>.<span class="gold">setBall</span>(<span class="dblue">ball</span>) <span class="green">// Set the HTML element that will represent a ball</span> </code>
+      <br>
+  
+      </div>
+    </div>
+
+   <div class="header">Methods</div>
+    <div id="methodsContainer">
+
+      <div class="codeContainer">
+        <code><span class="blue">const</span> <span class="dblue">aMlibrary</span> = <span class="blue">new</span> <span class="dblue">aM</span>()</code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        <code><span class="blue">new</span> <span class="dblue">aM</span>()</code> returns the object necessary to use the library.
+      </div>
+
+      <div class="codeContainer">
+        <code>	<span class="dblue">aMlibrary</span>.<span class="gold">initiate</span>(<span class="red">input</span>) </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        Sets the input, a specific HTML element, to be the current
+        animation field (where player as well as ball elements can be placed and animated within by the user). The
+        function also deletes any player or ball elements from a previously used animation field that is located on
+        the same page. 
+        <br>
+        <span class="bold">Input: </span>
+        The input to this function is the selector query of the desired animation field, which must be a Div object.
+      </div>
+
+      <div class="codeContainer">
+        <code>	<span class="dblue">aMlibrary</span>.<span class="gold">setReset</span>(<span class="red">input</span>) </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        This function sets the private reset variable to be true or false. If the input is true, then whenever all
+        the animations in the current animation field finish running, the elements within the
+        animation field will return to their starting positions prior to the "Play Animations” button
+        being clicked clicked initially, with the exact same animation paths. If the input is false, then whenever all the
+        animations in the current animation field finish running, the elements will remain in the final
+        position of their animation path and their previous animation paths will be erased. 
+        <br>
+        <span class="bold">Input: </span>
+        The input to this function is a boolean (true or false).
+      </div>
+
+      <div class="codeContainer">
+        <code>	<span class="dblue">aMlibrary</span>.<span class="gold">horizontalInteracter</span>() </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        This function returns an HTML Div element, known as the horizontalInteracter, which the user can interact with to perform
+        additional functionality on the current animation field. The developer can then place this HTML Div element wherever they desire relative to the
+        current animation field. 
+      </div>
+
+      <div class="codeContainer">
+        <code>	<span class="dblue">aMlibrary</span>.<span class="gold">setSlider</span>() </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        This function creates the slider within the horizontalInteracter, and initializes its (the slider's) functionality.
+      </div>
+
+      <div class="codeContainer">
+        <code>	<span class="dblue">aMlibrary</span>.<span class="gold">setPlayer</span>(<span class="red">input</span>) </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        This function sets the player element, which is to be used in an animation field, to be the
+        given HTML element. 
+        <br>
+        <span class="bold">Input: </span>
+        The input to this function should be the actual HTML element (NOT
+        its selector query).
+      </div>
+
+      <div class="codeContainer">
+        <code><span class="dblue">aMlibrary</span>.<span class="gold">setBall</span>(<span class="red">input</span>) </code>
+      </div>
+      <div class="description">
+        <span class="bold">Description: </span>
+        This function sets the ball element, which is to be used in an animation field, to be the given
+        HTML element. 
+        <br>
+        <span class="bold">Input: </span>
+        The input to this function should be the actual HTML element (NOT its
+        selector query).
+      </div>
+      
+    </div>
+    
+
+ </body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="examples.css">
+    
+    <title>JS Libraries</title>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!-- Note: I am only using the draggable and slider plugins from jQuery UI  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">  <!-- Note: I need jQuery CSS so that the jQuery UI slider renders properly  -->
+    <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> <!-- Note: I am only using the deepClone method from lodash  -->
+
+    <script defer type="text/javascript" src='js/animate.js'></script>
+    <script defer type="text/javascript" src='js/examples.js'></script>
+
+ </head>
+ <body>
+  <div class="title">aniMate.js</div>
+
+  <div class="subtitle">
+    A learning utility library that allows users to easily create animations representing
+    plays or events in sports.     
+  </div>
+
+  <a class="navigator" href="./examples.html">Home</a>
+  <a class="navigator" href="./documentation.html">Documentation</a>
+
+  <div class="header">What is aniMate?</div>
+  <div id="explanation">
+    <div class="description">
+      <span>aniMate is a learning utility library that allows users to easily create animations representing
+        plays or events in sports in a specified HTML Div element of a webpage. We refer to this HTML Div element as the <span class="underline">animation field</span>. </span>
+      <br><br>
+      <span>The developper dictates
+        what exactly this HTML Div element is, what type of elements can be
+        animated within it and what happens when the animations stop running.</span>
+        <br><br>
+      <span> Users are able to add
+        elements selected by the developer anywhere within the designated animation field. These
+        added elements can be assigned custom animations which can then be run simultaneously.</span>
+      <br><br>
+      <span>In
+        general, the library is intended to be used for the creation of visualizations that are relevant to
+        sports which involve a ball. Specifically, these visual animations are meant to be used as a
+        teaching tool for coaches.    </span>
+    </div>
+  </div>
+
+  <div class="header">Features</div>
+  <div id="features">
+    <div class="description">
+      <ul>
+        <li>The animations of all elements occur simultaneously.</li>
+        <li>The animation path of each element is marked by an outline.</li>
+        <li>The colour of the animation path's outline can be specified.</li>
+        <li>Animations can be paused and resumed.</li>
+        <li>There is a slider which can be dragged back and forth to temporarily move all elements along their animation paths.</li>
+        <li>The speed of each animation can be specified.</li>
+        <li>Multiple teams and players can be represented.</li>
+        <li>
+          When an element has been added to the animation field, it can be moved within the animation field (but cannot leave the
+          animation field) by dragging the element with the user’s mouse.
+        </li>
+        <li>If an element with an animation path is dragged by the user, the animation path will automatically
+          be updated to the element's new position. However, while dragging such an element, if any
+          part of the updated animation path would result in the element leaving the animation field, it
+          is removed from the element’s animation path. 
+        </li>
+        <li> Depending on the developpers choice, when all the animations have finished, the elements will either return
+          to their starting positions with the exact same animation paths or the elements will remain in the final position of their animation path and their previous animation
+          paths will be erased.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="header">Example 1: Animations Reset</div>
+  <div id="example1">
+    <div class="description">
+      We create an animation field that allows users to build a football play. We want the user to be able to repeat and refine the play, that is, we want the animations to reset.
+      Thus, we need to call <span class="gold">setReset</span>(<span class="blue">true</span>), along with the other methods of the library.
+      The following code occurs in the HTML file:
+    </div>
+    <div class="codeContainer">
+      <code><span class="maroon">&lt;button</span> <span class="red">id</span>=<span class="blue">"footballButton"</span><span class="maroon">></span> Make Football Field the Animation Field </span><span class="maroon">&lt;/button&gt;</span></code>
+        <br>
+      <code><span class="maroon">&lt;div</span> <span class="red">id</span>=<span class="blue">"animationField"</span><span class="maroon">></span></span><span class="maroon">&lt;/div&gt;</span></code>
+      <br>
+
+    </div>
+
+    <div class="description">
+      The following code occurs in the CSS file:
+    </div>
+    <div class="codeContainer">
+      <code><span class="maroon">#animationField </span>{</code>
+        <br>
+        <code class="indent">...</code>
+        <br>
+        <code class="indent"><span class="red">background-image</span>:<span class="gold"> url</span>(<span class="maroon">"americanFootbalField.jpeg"</span>);</code>
+        <br>
+        <code class="indent"><span class="red">background-size</span>:<span class="green"> 100% 100%</span>;</code>
+        <br>
+        <code class="indent"><span class="red">position</span>:<span class="dblue"> relative</span>;</code>
+        <br>
+        <code class="indent">...</code>
+        <br>
+      <code> }</code>
+
+
+    </div>
+
+    <div class="description">
+      The following code occurs in the JavaScript file. Please note that the order of the aniMate method calls must be the same as below for library to work:
+    </div>
+
+    <div class="codeContainer">
+      <code><span class="blue">const</span> <span class="dblue">aMlibrary</span> = <span class="blue">new</span> <span class="dblue">aM</span>()</code>
+      <br>
+      <br>
+      <code><span class="blue">const</span> <span class="dblue">player</span> = <span class="blue">document</span>.<span class="gold">createElement</span>(<span class="red">'div'</span>)</code>
+      <br>
+      <code>	<span class="dblue">player.style</span> = <span class="red">'width: 40px; height: 40px; border-radius: 50%; background-color: Blue;'</span> </code>
+      <br>
+      <br>
+      <code> <span class="blue">const</span> <span class="dblue">ball</span> = <span class="blue">document</span>.<span class="gold">createElement</span>(<span class="red">'div'</span>)</code>
+      <br>
+      <code><span class="dblue">ball.style</span> = <span class="red">'width: 30px; height: 30px; border-radius: 50%; background-color: Brown;'</span></code>
+      <br>
+      <br>
+      <code> <span class="blue">const</span> <span class="dblue">hInteracter</span> = <span class="dblue">aMlibrary</span>.<span class="gold">horizontalInteracter</span>() </code>
+      <br>
+      <br>
+      <code><span class="blue">const</span> <span class="dblue">footballButton</span> = <span class="blue">document</span>.<span class="gold">querySelector</span>(<span class="red">'#footballButton'</span>)</code>
+      <br>
+      <code><span class="dblue">footballButton</span>.<span class="gold">addEventListener</span>(<span class="red">'click'</span>, <span class="gold">footballInitiate</span>)</code>
+      <br>
+      <br>
+      <code><span class="blue">function</span> <span class="gold">footballInitiate</span>(<span class="blue">e</span>) {</code>
+        <br>
+        <code class="indent">	<span class="green">// animationField is the id of the Div element containing the football field below</span></code> 
+        <br> 
+        <code class="indent"><span class="dblue">aMlibrary</span>.<span class="gold">initiate</span>(<span class="red">'#animationField'</span>) </code> 
+        <br>
+        <code class="indent"><span class="dblue">aMlibrary</span>.<span class="gold">setReset</span>(<span class="blue">true</span>)</code>
+        <br>
+        <code class="indent"> $(<span class="red">'#animationField'</span>).<span class="gold">after</span>( <span class="dblue">hInteracter</span>);</code> 
+        <br>
+        <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setSlider</span>();  </code>
+        <br>
+        <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setPlayer</span>(<span class="dblue">player</span>) </code> 
+        <br>
+        <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setBall</span>(<span class="dblue">ball</span>) </code>
+        <br>
+        <code> }</code>
+
+
+    </div>
+    <div class="description">
+      Now that everything has been set up, click the "Make Football Field the Animation Field" button directly below. Then, click anywhere within the football field, and follow the instructions that pop up.
+      Note the horizontal interacter HTML element that appears below the football field.
+      Observe that after hitting the "Play Animations" button, when all the animations finish, they return to their starting positions with the exact same animation paths.
+    </div>
+  </div>
+  <div class="buttonHolderContainer">
+    <div class="buttonHolder">
+      <button class="makeThis" id="footballButton">Make Football Field the Animation Field</button>
+    </div>
+  </div>
+
+  <div id='animationField'>
+  </div>
+
+  <div class="header">Example 2: Animations Do Not Reset</div>
+  <div id="example2">
+    <div class="description">
+      We create an animation field that allows users to demonstrate certain soccer scenarios and how to continue after they occur. That is, we want the animations to not reset.
+      Thus, we need to call <span class="gold">setReset</span>(<span class="blue">false</span>) instead of <span class="gold">setReset</span>(<span class="blue">true</span>).
+      The following code occurs in the HTML file:
+    </div>
+
+    <div class="codeContainer">
+      <code><span class="maroon">&lt;button</span> <span class="red">id</span>=<span class="blue">"soccerButton"</span><span class="maroon">></span> Make Soccer Field the Animation Field </span><span class="maroon">&lt;/button&gt;</span></code>
+        <br>
+      <code><span class="maroon">&lt;div</span> <span class="red">id</span>=<span class="blue">"animationField2"</span><span class="maroon">></span></span><span class="maroon">&lt;/div&gt;</span></code>
+      <br>
+    </div>
+
+    <div class="description">
+      The following code occurs in the CSS file:
+    </div>
+    <div class="codeContainer">
+      <code><span class="maroon">#animationField2 </span>{</code>
+        <br>
+        <code class="indent">...</code>
+        <br>
+        <code class="indent"><span class="red">background-image</span>:<span class="gold"> url</span>(<span class="maroon">"soccerField.png"</span>);</code>
+        <br>
+        <code class="indent"><span class="red">background-size</span>:<span class="green"> 100% 100%</span>;</code>
+        <br>
+        <code class="indent"><span class="red">position</span>:<span class="dblue"> relative</span>;</code>
+        <br>
+        <code class="indent">...</code>
+        <br>
+      <code> }</code>
+
+
+    </div>
+
+    <div class="description">
+      The following code occurs in the JavaScript file. Please note that the order of the aniMate method calls must be the same as below for the library to work:
+    </div>
+
+    <div class="codeContainer">
+      <code><span class="blue">const</span> <span class="dblue">soccerButton</span> = <span class="blue">document</span>.<span class="gold">querySelector</span>(<span class="red">'#soccerButton'</span>)</code>
+      <br>
+      <code><span class="dblue">soccerButton</span>.<span class="gold">addEventListener</span>(<span class="red">'click'</span>, <span class="gold">soccerInitiate</span>)</code>
+      <br>
+      <br>
+      <code><span class="blue">function</span> <span class="gold">soccerInitiate</span>(<span class="blue">e</span>) {</code>
+      <br>
+      <code class="indent">	<span class="green">// animationField2 is the id of the Div element containing the soccer field below</span></code> 
+      <br> 
+      <code class="indent"><span class="dblue">aMlibrary</span>.<span class="gold">initiate</span>(<span class="red">'#animationField2'</span>) </code> 
+      <br>
+      <code class="indent"><span class="dblue">aMlibrary</span>.<span class="gold">setReset</span>(<span class="blue">false</span>)</code>
+      <br>
+      <code class="indent"> $(<span class="red">'#animationField2'</span>).<span class="gold">after</span>( <span class="dblue">hInteracter</span>);</code> 
+      <br>
+      <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setSlider</span>();  </code>
+      <br>
+      <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setPlayer</span>(<span class="dblue">player</span>) </code> 
+      <br>
+      <code class="indent"> <span class="dblue">aMlibrary</span>.<span class="gold">setBall</span>(<span class="dblue">ball</span>) </code>
+      <br>
+      <code> }</code>
+
+
+    </div>
+    <div class="description">
+      Now that everything has been set up, click the "Make Soccer Field the Animation Field" button directly below. Then, click anywhere within the soccer field, and follow the instructions that pop up. Note the horizontal interacter HTML element
+      that appears below the soccer field.
+      Observer that after hitting the "Play Animations" button, when all the animations finish, they do not return to their starting positions and the completed animation paths are deleted.
+    </div>
+  </div>
+  <div class="buttonHolderContainer">
+    <div class="buttonHolder">
+      <button class="makeThis" id="soccerButton">Make Soccer Field the Animation Field</button> 
+    </div>
+  </div>
+
+  <div id='animationField2'>
+  </div>
+ </body>
+
+</html>
